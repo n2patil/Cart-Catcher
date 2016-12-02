@@ -20,7 +20,6 @@ public class TextOptions : MonoBehaviour {
 
         UpdateText();
 
-
     }
 
     public void CycleOptions()
