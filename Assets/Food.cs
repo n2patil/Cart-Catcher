@@ -7,6 +7,8 @@ public class Food : MonoBehaviour {
     public bool hasVitaminA;
     public bool hasCalcium;
     public bool hasProtein;
+	public bool hasAntiOxidents;
+	public bool hasPotassium;
 
     public float xEnd;
     public float floatDuration;

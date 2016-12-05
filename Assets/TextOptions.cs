@@ -15,26 +15,32 @@ public class TextOptions : MonoBehaviour {
 		public int numFiber;
 		public int numVitaminA;
 		public int numCalcium;
+		public int numAntiOx;
+		public int numPotassium;
 
-		public FoodRequirement(int fiber, int vitA, int calcium) {
+		public FoodRequirement(int fiber, int vitA, int calcium, int antiOx, int potassium) {
 
 			numFiber = fiber;
 			numVitaminA = vitA;
 			numCalcium = calcium;
+			numAntiOx=antiOx;
+			numPotassium= potassium;
 
 		}
 
 		public override string ToString ()
 		{
-			return string.Format ("Fiber: {0} \n Vitamin A: {1} \n Calcium: {2}", numFiber, numVitaminA, numCalcium);
+			return string.Format ("Fiber: {0} \n Vitamin A: {1} \n Calcium: {2} \n Antioxidents: {3} \n Potassium: {4}", numFiber, numVitaminA, numCalcium, numAntiOx, numPotassium);
 		}
 	}
 
 	public static KeyValuePair<string, FoodRequirement>[] questions = new KeyValuePair<string, FoodRequirement>[]
     {
-		new KeyValuePair<string, FoodRequirement> ("Pick 3 items that are a good source of Vitamin A.", new FoodRequirement(0, 3, 0)),
-		new KeyValuePair<string, FoodRequirement> ("Pick 2 items that are a high source of fiber.", new FoodRequirement(2,0,0)),
-		new KeyValuePair<string, FoodRequirement> ("Pick 3 items that are high source of calcium.", new FoodRequirement(0,0,3))
+		new KeyValuePair<string, FoodRequirement> ("Pick 3 items that are a good source of Vitamin A.", new FoodRequirement(0, 3, 0, 0,0)),
+		new KeyValuePair<string, FoodRequirement> ("Pick 2 items that are a high source of fiber.", new FoodRequirement(2,0,0,0,0)),
+		new KeyValuePair<string, FoodRequirement> ("Pick 3 items that are high source of calcium.", new FoodRequirement(0,0,3,0,0)),
+		new KeyValuePair<string, FoodRequirement> ("Pick 4 items that are high source of antioxidants.", new FoodRequirement(0,0,0,4,0)),
+		new KeyValuePair<string, FoodRequirement> ("Pick 3 items that are good source of Potassium.", new FoodRequirement(0,0,0,0,3))
     };
 
 	public void Awake() {

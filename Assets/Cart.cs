@@ -62,6 +62,18 @@ public class Cart : MonoBehaviour {
 
 			}
 
+			if (fallenFood.hasAntiOxidents) {
+
+				currentFood.numAntiOx++;
+
+			}
+
+			if (fallenFood.hasPotassium) {
+
+				currentFood.numPotassium++;
+
+			}
+
 
 
 			CheckRequirement ();
@@ -91,6 +103,18 @@ public class Cart : MonoBehaviour {
 
 		if (currentFood.numVitaminA < currentRequirement.numVitaminA){
 			Debug.Log("Not enough vitamin A");
+
+			return;
+		}
+
+		if (currentFood.numAntiOx < currentRequirement.numAntiOx){
+			Debug.Log("Not enough antiOx");
+
+			return;
+		}
+
+		if (currentFood.numPotassium < currentRequirement.numPotassium){
+			Debug.Log("Not enough Potassium");
 
 			return;
 		}
